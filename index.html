@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="block bcg-black"></div>
+    <div class="block">
+      <div class="container">
+        <img
+          src="https://randomuser.me/api/portraits/men/75.jpg"
+          alt="random user"
+          class="user-img"
+        />
+        <p class="user-title">My name is</p>
+        <p class="user-value">John Smith</p>
+        <div class="values-list">
+          <!-- single icon -->
+          <button class="icon" data-label="name">
+            <span class="far fa-user"></span>
+          </button>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <button class="icon" data-label="email">
+            <span class="far fa-envelope-open"></span>
+          </button>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <button class="icon" data-label="age">
+            <span class="far fa-calendar-times"></span>
+          </button>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <button class="icon" data-label="street">
+            <span class="far fa-map"></span>
+          </button>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <button class="icon" data-label="phone">
+            <span class="fas fa-phone"></span>
+          </button>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <button class="icon" data-label="password">
+            <span class="fas fa-user-lock"></span>
+          </button>
+          <!-- end of single icon -->
+        </div>
+        <button class="btn" type="button">random user</button>
+      </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
